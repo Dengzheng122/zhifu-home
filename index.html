@@ -6,57 +6,74 @@
 <title>智富研究所 · 个人主页</title>
 <style>
   :root{
-    --paper:#faf6ef; --card:#fffdf8; --ink:#2e2a24; --muted:#8a8175;
-    --line:#e8ddcc; --accent:#a96b2e; --accent-soft:#f3e7d3;
-    --green:#4c7a57; --green-soft:#e6efe7; --amber:#8a6a1f; --amber-soft:#f5eed2;
+    /* 东方美学：宣纸为底，墨为骨，朱砂点睛，黛青压阵，赭金勾线 */
+    --paper:#f5f0e2; --card:#fffdf4; --ink:#2a251b; --muted:#8a7c62;
+    --line:#e2d6b8; --cinnabar:#bf3f22; --cinnabar-soft:#f7e3d6;
+    --teal:#33555a; --teal-soft:#e1ebe4; --gold:#a8842f; --gold-soft:#f4ecd0;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
     line-height:1.7}
-  .wrap{max-width:760px;margin:0 auto;padding:28px 18px 60px}
-  header{text-align:center;padding:26px 10px 8px}
-  header h1{font-family:"Songti SC","Noto Serif SC",serif;font-size:34px;margin:0 0 6px;letter-spacing:2px}
-  header p{color:var(--muted);margin:4px 0;font-size:15px}
-  nav{margin:22px 0 6px;text-align:center}
+  /* 顶部三色丝带：朱砂 · 黛青 · 赭金 */
+  body::before{content:"";display:block;height:6px;
+    background:linear-gradient(90deg,var(--cinnabar) 0 33%,var(--teal) 33% 66%,var(--gold) 66% 100%)}
+  .wrap{max-width:760px;margin:0 auto;padding:22px 18px 60px}
+  header{text-align:center;padding:20px 10px 4px}
+  /* 印章 */
+  .seal{display:inline-block;background:var(--cinnabar);color:#fff;
+    font-family:"Songti SC","Noto Serif SC",serif;font-size:21px;line-height:1.15;
+    padding:9px 10px 8px;border-radius:6px;transform:rotate(-3deg);
+    box-shadow:0 2px 0 rgba(0,0,0,.12);letter-spacing:2px}
+  header h1{font-family:"Songti SC","Noto Serif SC",serif;font-size:34px;margin:14px 0 2px;letter-spacing:4px}
+  header .sub{color:var(--muted);margin:4px 0;font-size:15px}
+  /* 剪纸美人 */
+  .lady{display:block;margin:10px auto 2px;height:150px}
+  /* 梅花分隔 */
+  .divider{display:flex;align-items:center;gap:12px;margin:16px auto;max-width:320px}
+  .divider i{flex:1;height:1px;background:var(--line)}
+  nav{margin:18px 0 6px;text-align:center}
   nav a{display:inline-block;margin:0 8px;padding:7px 18px;border:1px solid var(--line);
     border-radius:999px;background:var(--card);color:var(--ink);text-decoration:none;font-size:14px}
-  nav a:hover{border-color:var(--accent);color:var(--accent)}
-  h2{font-family:"Songti SC","Noto Serif SC",serif;font-size:22px;margin:38px 0 14px;
-    padding-bottom:8px;border-bottom:2px solid var(--accent-soft)}
+  nav a:hover{border-color:var(--cinnabar);color:var(--cinnabar)}
+  h2{position:relative;font-family:"Songti SC","Noto Serif SC",serif;font-size:22px;
+    margin:38px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  h2::after{content:"";position:absolute;left:0;bottom:-1px;width:38px;height:3px;background:var(--cinnabar)}
   .intro{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-size:15px}
   .tool{background:var(--card);border:1px solid var(--line);border-radius:14px;
     padding:18px 20px;margin-bottom:14px}
   .tool h3{margin:0 0 6px;font-size:17px}
-  .tool p{margin:6px 0;font-size:14px;color:#4d463c}
+  .tool p{margin:6px 0;font-size:14px;color:#4d4433}
   .tool .note{font-size:13px;color:var(--muted)}
   .badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;margin-left:8px;vertical-align:2px}
-  .badge.try{background:var(--green-soft);color:var(--green)}
-  .badge.watch{background:var(--amber-soft);color:var(--amber)}
-  .tool a{color:var(--accent);text-decoration:none;margin-right:14px;font-size:14px}
+  .badge.free{background:var(--teal-soft);color:var(--teal)}
+  .badge.freemium{background:var(--gold-soft);color:#8a6a1f}
+  .badge.local{background:var(--cinnabar-soft);color:var(--cinnabar)}
+  .tool a{color:var(--teal);text-decoration:none;margin-right:14px;font-size:14px}
   .tool a:hover{text-decoration:underline}
-  .tip{background:var(--accent-soft);border-radius:12px;padding:14px 18px;font-size:14px;color:#6b4d24}
+  .tip{background:var(--gold-soft);border-radius:12px;padding:14px 18px;font-size:14px;color:#6b5320}
   /* 写作室 */
   .studio{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
   .studio input[type=text]{width:100%;font-size:18px;padding:12px 14px;border:1px solid var(--line);
-    border-radius:10px;background:#fffef9;outline:none}
-  .studio input[type=text]:focus{border-color:var(--accent)}
+    border-radius:10px;background:#fffef8;outline:none}
+  .studio input[type=text]:focus{border-color:var(--cinnabar)}
   .studio textarea{width:100%;min-height:340px;margin-top:14px;font-size:17px;line-height:1.9;
-    padding:16px;border:1px solid var(--line);border-radius:10px;background:#fffef9;
+    padding:16px;border:1px solid var(--line);border-radius:10px;background:#fffef8;
     outline:none;resize:vertical}
-  .studio textarea:focus{border-color:var(--accent)}
+  .studio textarea:focus{border-color:var(--cinnabar)}
   .bar{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-  .bar button{flex:1 1 130px;padding:12px 8px;font-size:15px;border-radius:10px;cursor:pointer;border:1px solid var(--line);background:#fffef9}
-  .bar button:hover{border-color:var(--accent)}
-  .bar button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-  .bar button.recording{background:#b03a2e;color:#fff;border-color:#b03a2e}
+  .bar button{flex:1 1 130px;padding:12px 8px;font-size:15px;border-radius:10px;cursor:pointer;border:1px solid var(--line);background:#fffef8}
+  .bar button:hover{border-color:var(--cinnabar)}
+  .bar button.primary{background:var(--cinnabar);color:#fff;border-color:var(--cinnabar)}
+  .bar button.recording{background:#a33327;color:#fff;border-color:#a33327}
   .bar button:disabled{opacity:.45;cursor:not-allowed}
   .status{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;
     margin-top:12px;font-size:13px;color:var(--muted)}
-  .status .voice{color:var(--accent)}
+  .status .voice{color:var(--cinnabar)}
   footer{text-align:center;color:var(--muted);font-size:13px;margin-top:44px;line-height:1.9}
   @media (max-width:520px){
     header h1{font-size:28px}
+    .lady{height:120px}
     .studio textarea{min-height:280px;font-size:16px}
   }
 </style>
@@ -65,9 +82,55 @@
 <div class="wrap">
 
   <header>
+    <div class="seal">智<br>富</div>
     <h1>智富研究所</h1>
-    <p>个人主页 · 写作室</p>
-    <p>想到什么，就写下来。</p>
+    <!-- 剪纸美人：朱砂剪纸意象，执团扇 -->
+    <svg class="lady" viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="剪纸美人">
+      <g fill="#bf3f22">
+        <!-- 发髻 -->
+        <circle cx="100" cy="26" r="11"/>
+        <!-- 头 -->
+        <circle cx="100" cy="50" r="19"/>
+        <!-- 鬓发 -->
+        <path d="M81,44 Q76,68 88,86 Q80,58 85,42 Z"/>
+        <!-- 衣袍 -->
+        <path d="M100,72 C72,80 58,108 52,158 L44,236 Q100,248 156,236 L148,158 C142,108 128,80 100,72 Z"/>
+        <!-- 宽袖 -->
+        <path d="M60,96 Q28,124 34,168 Q50,146 66,124 Q70,108 60,96 Z"/>
+        <!-- 团扇 -->
+        <circle cx="152" cy="110" r="19"/>
+        <rect x="146" y="126" width="4" height="26" rx="2"/>
+      </g>
+      <!-- 梅枝点缀 -->
+      <g stroke="#33555a" stroke-width="2" fill="none" stroke-linecap="round">
+        <path d="M28,232 Q48,204 68,194"/>
+      </g>
+      <g fill="#33555a">
+        <circle cx="68" cy="194" r="3.5"/>
+        <circle cx="60" cy="188" r="3.5"/>
+        <circle cx="76" cy="188" r="3.5"/>
+        <circle cx="63" cy="200" r="3.5"/>
+        <circle cx="74" cy="200" r="3.5"/>
+      </g>
+      <g fill="#a8842f">
+        <circle cx="68" cy="194" r="1.6"/>
+      </g>
+      <rect x="40" y="240" width="120" height="2" fill="#a8842f" opacity="0.55"/>
+    </svg>
+    <p class="sub">个人主页 · 写作室</p>
+    <p class="sub">想到什么，就写下来。</p>
+    <div class="divider"><i></i>
+      <svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="#33555a">
+          <ellipse cx="13" cy="5" rx="3.4" ry="4.4"/>
+          <ellipse cx="20.5" cy="10.5" rx="3.4" ry="4.4" transform="rotate(72 20.5 10.5)"/>
+          <ellipse cx="17.5" cy="19.5" rx="3.4" ry="4.4" transform="rotate(144 17.5 19.5)"/>
+          <ellipse cx="8.5" cy="19.5" rx="3.4" ry="4.4" transform="rotate(216 8.5 19.5)"/>
+          <ellipse cx="5.5" cy="10.5" rx="3.4" ry="4.4" transform="rotate(288 5.5 10.5)"/>
+        </g>
+        <circle cx="13" cy="13" r="2.2" fill="#a8842f"/>
+      </svg>
+    <i></i></div>
   </header>
 
   <nav>
@@ -76,43 +139,51 @@
   </nav>
 
   <h2 id="tools">写作工具</h2>
-  <p style="font-size:14px;color:var(--muted)">以下工具来自转帖挖掘，评级沿用转帖看板的原判级，仅供参考，点开即是原地址。</p>
+  <p style="font-size:14px;color:var(--muted)">以下均为可直接打开使用的工具，国内可直连。</p>
 
   <div class="tool">
-    <h3>Jellyfish：AI 短剧一站式工作台 <span class="badge try">可试</span></h3>
-    <p>剧本 → 分镜 → 角色一致性 → 生成 → 导出，全流程工作台，约 6.8K star。</p>
-    <p class="note">注意：工作台免费不等于生成免费，模型调用成本先算。</p>
-    <a href="https://github.com/Forget-C/Jellyfish" target="_blank" rel="noopener">GitHub 仓库 ↗</a>
-    <a href="https://x.com/Ryrenz/status/2113981086556401762" target="_blank" rel="noopener">原帖 ↗</a>
+    <h3>本站写作室 <span class="badge local">本站</span></h3>
+    <p>不用跳出去，打开就能写，支持语音输入，草稿自动存在本机浏览器里。</p>
+    <a href="#studio">打开写作室 ↓</a>
   </div>
 
   <div class="tool">
-    <h3>Toonflow：开源 AI 短剧工具 <span class="badge watch">观望</span></h3>
-    <p>GitHub 开源 AI 短剧工具，1.8 万 star。</p>
-    <p class="note">“两小时出一部短剧成本 130 块”是 2 分钟演示片的数据，别当成正片成本。</p>
-    <a href="https://github.com/HBAI-Ltd/Toonflow-app" target="_blank" rel="noopener">GitHub 仓库 ↗</a>
+    <h3>秘塔写作猫 <span class="badge freemium">免费 + 会员</span></h3>
+    <p>中文 AI 写作助手：纠错、改写润色、自动续写、中英翻译。免费版每天可纠错 8000 字，日常改稿够用。</p>
+    <a href="https://xiezuocat.com/" target="_blank" rel="noopener">官网 ↗</a>
   </div>
 
   <div class="tool">
-    <h3>Awesome Short Drama Skills 清单 <span class="badge watch">观望</span></h3>
-    <p>短剧 Skill 清单，几十个 Skill 整理成册，挑 1–2 个互补的再试。</p>
-    <a href="https://x.com/GitHub_Daily/status/2113842948945412240" target="_blank" rel="noopener">原帖 ↗</a>
+    <h3>豆包 <span class="badge free">免费</span></h3>
+    <p>字节跳动 AI 助手：写文章、改稿、故事创作、长文大纲，基础功能免费，网页打开即用。</p>
+    <a href="https://www.doubao.com/" target="_blank" rel="noopener">官网 ↗</a>
   </div>
 
   <div class="tool">
-    <h3>去 AI 味改稿教程 <span class="badge watch">观望</span></h3>
-    <p>Muse 实操教程：去 AI 味改稿手把手，与文案写作直接相关，$0 可对照着试。</p>
-    <p class="note">只改自己的稿子；别把改稿工具当成“过检测包过”的保证。</p>
-    <a href="https://x.com/7998l201/status/2114894503765323816" target="_blank" rel="noopener">原帖 ↗</a>
+    <h3>Kimi <span class="badge free">免费</span></h3>
+    <p>月之暗面 AI 助手，长文本见长：整本小说量级的长文也能读、能改、能续写，中文表达自然。</p>
+    <a href="https://www.kimi.com/" target="_blank" rel="noopener">官网 ↗</a>
   </div>
 
   <div class="tool">
-    <h3>闲鱼 AI 接单：写文案 <span class="badge watch">观望</span></h3>
-    <p>新手 AI 副业接单路径：闲鱼上架 AI 做 PPT、改简历、写文案，当天能出单。</p>
-    <a href="https://x.com/mythsblack/status/2114193510584950905" target="_blank" rel="noopener">原帖 ↗</a>
+    <h3>作家助手（阅文官方） <span class="badge free">免费</span></h3>
+    <p>写小说专用：大纲、角色设定、AI 妙笔、离线码字、多端同步，写完可一键发布到起点、QQ 阅读等阅文平台。</p>
+    <a href="https://www.yuewen.com/app/?type=appzj" target="_blank" rel="noopener">官方下载 ↗</a>
   </div>
 
-  <div class="tip">实话：转帖里暂时没有专门写小说的工具，以上是离写作最近的剧本与文案类。以后转帖里再有这类工具，可以再补进来。</div>
+  <div class="tool">
+    <h3>橙瓜码字 <span class="badge free">免费</span></h3>
+    <p>写小说专用：多端云同步、时光机备份、起名助手、小黑屋锁定、敏感词检测，手机电脑都能接上写。</p>
+    <a href="https://mz.chenggua.com/" target="_blank" rel="noopener">官网 ↗</a>
+  </div>
+
+  <div class="tool">
+    <h3>讯飞语记 <span class="badge free">免费</span></h3>
+    <p>说话变文字：单次最长 120 分钟持续语音输入，多端同步，适合开口说、自动成文字的口述写作。</p>
+    <a href="https://iflynote.com/" target="_blank" rel="noopener">官网 ↗</a>
+  </div>
+
+  <div class="tip">这样分工最顺：写小说用作家助手或橙瓜码字；改稿润色用秘塔写作猫；长文和对话写作看豆包、Kimi；开口说成文字用讯飞语记；不想跳出去，就用本站写作室。</div>
 
   <h2 id="studio">写作室</h2>
   <div class="studio">
