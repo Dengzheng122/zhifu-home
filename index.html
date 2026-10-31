@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智富研究所 · 个人主页</title>
+<style>
+  :root{
+    --paper:#faf6ef; --card:#fffdf8; --ink:#2e2a24; --muted:#8a8175;
+    --line:#e8ddcc; --accent:#a96b2e; --accent-soft:#f3e7d3;
+    --green:#4c7a57; --green-soft:#e6efe7; --amber:#8a6a1f; --amber-soft:#f5eed2;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.7}
+  .wrap{max-width:760px;margin:0 auto;padding:28px 18px 60px}
+  header{text-align:center;padding:26px 10px 8px}
+  header h1{font-family:"Songti SC","Noto Serif SC",serif;font-size:34px;margin:0 0 6px;letter-spacing:2px}
+  header p{color:var(--muted);margin:4px 0;font-size:15px}
+  nav{margin:22px 0 6px;text-align:center}
+  nav a{display:inline-block;margin:0 8px;padding:7px 18px;border:1px solid var(--line);
+    border-radius:999px;background:var(--card);color:var(--ink);text-decoration:none;font-size:14px}
+  nav a:hover{border-color:var(--accent);color:var(--accent)}
+  h2{font-family:"Songti SC","Noto Serif SC",serif;font-size:22px;margin:38px 0 14px;
+    padding-bottom:8px;border-bottom:2px solid var(--accent-soft)}
+  .intro{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-size:15px}
+  .tool{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;margin-bottom:14px}
+  .tool h3{margin:0 0 6px;font-size:17px}
+  .tool p{margin:6px 0;font-size:14px;color:#4d463c}
+  .tool .note{font-size:13px;color:var(--muted)}
+  .badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;margin-left:8px;vertical-align:2px}
+  .badge.try{background:var(--green-soft);color:var(--green)}
+  .badge.watch{background:var(--amber-soft);color:var(--amber)}
+  .tool a{color:var(--accent);text-decoration:none;margin-right:14px;font-size:14px}
+  .tool a:hover{text-decoration:underline}
+  .tip{background:var(--accent-soft);border-radius:12px;padding:14px 18px;font-size:14px;color:#6b4d24}
+  /* 写作室 */
+  .studio{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .studio input[type=text]{width:100%;font-size:18px;padding:12px 14px;border:1px solid var(--line);
+    border-radius:10px;background:#fffef9;outline:none}
+  .studio input[type=text]:focus{border-color:var(--accent)}
+  .studio textarea{width:100%;min-height:340px;margin-top:14px;font-size:17px;line-height:1.9;
+    padding:16px;border:1px solid var(--line);border-radius:10px;background:#fffef9;
+    outline:none;resize:vertical}
+  .studio textarea:focus{border-color:var(--accent)}
+  .bar{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .bar button{flex:1 1 130px;padding:12px 8px;font-size:15px;border-radius:10px;cursor:pointer;border:1px solid var(--line);background:#fffef9}
+  .bar button:hover{border-color:var(--accent)}
+  .bar button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .bar button.recording{background:#b03a2e;color:#fff;border-color:#b03a2e}
+  .bar button:disabled{opacity:.45;cursor:not-allowed}
+  .status{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;
+    margin-top:12px;font-size:13px;color:var(--muted)}
+  .status .voice{color:var(--accent)}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:44px;line-height:1.9}
+  @media (max-width:520px){
+    header h1{font-size:28px}
+    .studio textarea{min-height:280px;font-size:16px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>智富研究所</h1>
+    <p>个人主页 · 写作室</p>
+    <p>想到什么，就写下来。</p>
+  </header>
+
+  <nav>
+    <a href="#tools">写作工具</a>
+    <a href="#studio">写作室</a>
+  </nav>
+
+  <h2 id="tools">写作工具</h2>
+  <p style="font-size:14px;color:var(--muted)">以下工具来自转帖挖掘，评级沿用转帖看板的原判级，仅供参考，点开即是原地址。</p>
+
+  <div class="tool">
+    <h3>Jellyfish：AI 短剧一站式工作台 <span class="badge try">可试</span></h3>
+    <p>剧本 → 分镜 → 角色一致性 → 生成 → 导出，全流程工作台，约 6.8K star。</p>
+    <p class="note">注意：工作台免费不等于生成免费，模型调用成本先算。</p>
+    <a href="https://github.com/Forget-C/Jellyfish" target="_blank" rel="noopener">GitHub 仓库 ↗</a>
+    <a href="https://x.com/Ryrenz/status/2113981086556401762" target="_blank" rel="noopener">原帖 ↗</a>
+  </div>
+
+  <div class="tool">
+    <h3>Toonflow：开源 AI 短剧工具 <span class="badge watch">观望</span></h3>
+    <p>GitHub 开源 AI 短剧工具，1.8 万 star。</p>
+    <p class="note">“两小时出一部短剧成本 130 块”是 2 分钟演示片的数据，别当成正片成本。</p>
+    <a href="https://github.com/HBAI-Ltd/Toonflow-app" target="_blank" rel="noopener">GitHub 仓库 ↗</a>
+  </div>
+
+  <div class="tool">
+    <h3>Awesome Short Drama Skills 清单 <span class="badge watch">观望</span></h3>
+    <p>短剧 Skill 清单，几十个 Skill 整理成册，挑 1–2 个互补的再试。</p>
+    <a href="https://x.com/GitHub_Daily/status/2113842948945412240" target="_blank" rel="noopener">原帖 ↗</a>
+  </div>
+
+  <div class="tool">
+    <h3>去 AI 味改稿教程 <span class="badge watch">观望</span></h3>
+    <p>Muse 实操教程：去 AI 味改稿手把手，与文案写作直接相关，$0 可对照着试。</p>
+    <p class="note">只改自己的稿子；别把改稿工具当成“过检测包过”的保证。</p>
+    <a href="https://x.com/7998l201/status/2114894503765323816" target="_blank" rel="noopener">原帖 ↗</a>
+  </div>
+
+  <div class="tool">
+    <h3>闲鱼 AI 接单：写文案 <span class="badge watch">观望</span></h3>
+    <p>新手 AI 副业接单路径：闲鱼上架 AI 做 PPT、改简历、写文案，当天能出单。</p>
+    <a href="https://x.com/mythsblack/status/2114193510584950905" target="_blank" rel="noopener">原帖 ↗</a>
+  </div>
+
+  <div class="tip">实话：转帖里暂时没有专门写小说的工具，以上是离写作最近的剧本与文案类。以后转帖里再有这类工具，可以再补进来。</div>
+
+  <h2 id="studio">写作室</h2>
+  <div class="studio">
+    <input id="title" type="text" placeholder="标题（不填也行，导出时叫“未命名”）" maxlength="80">
+    <textarea id="editor" placeholder="在这里写……想到什么就写下来，草稿会自动存在这台设备的浏览器里。"></textarea>
+    <div class="bar">
+      <button id="voiceBtn" class="primary">🎤 开始语音输入</button>
+      <button id="saveBtn">保存草稿</button>
+      <button id="exportBtn">导出 .md</button>
+      <button id="newBtn">新建一篇</button>
+    </div>
+    <div class="status">
+      <span id="count">共 0 字</span>
+      <span id="saved">草稿未保存</span>
+      <span id="voiceStatus" class="voice"></span>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin:14px 0 0">
+      语音输入说明：点“开始语音输入”后直接说话，识别出的文字会插到光标处；再点一次停止。
+      需要麦克风权限（本站是 https，可正常申请）。当前浏览器不支持语音识别时，按钮会变灰并提示，换 Chrome 或 Edge 打开即可。
+      草稿只存在本机浏览器里，换设备看不到，重要文章及时导出。
+    </p>
+  </div>
+
+  <footer>
+    智富研究所 · 微信视频号同名<br>
+    本页为静态页面，不收集、不上传任何内容。
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var titleEl = document.getElementById('title');
+  var editor = document.getElementById('editor');
+  var countEl = document.getElementById('count');
+  var savedEl = document.getElementById('saved');
+  var voiceBtn = document.getElementById('voiceBtn');
+  var voiceStatus = document.getElementById('voiceStatus');
+  var KEY = 'zhifu-draft-v1';
+  var saveTimer = null;
+
+  function countWords(){
+    var text = (titleEl.value + '\n' + editor.value).replace(/\s/g, '');
+    countEl.textContent = '共 ' + text.length + ' 字';
+  }
+
+  function saveDraft(silent){
+    try{
+      localStorage.setItem(KEY, JSON.stringify({
+        title: titleEl.value, content: editor.value, savedAt: Date.now()
+      }));
+      var t = new Date();
+      savedEl.textContent = '草稿已保存 ' + t.getHours() + ':' + String(t.getMinutes()).padStart(2, '0');
+    }catch(e){
+      if(!silent) savedEl.textContent = '保存失败：浏览器不允许本地存储';
+    }
+  }
+
+  function scheduleSave(){
+    countWords();
+    if(saveTimer) clearTimeout(saveTimer);
+    saveTimer = setTimeout(function(){ saveDraft(true); }, 800);
+  }
+
+  // 恢复草稿
+  try{
+    var raw = localStorage.getItem(KEY);
+    if(raw){
+      var d = JSON.parse(raw);
+      titleEl.value = d.title || '';
+      editor.value = d.content || '';
+      savedEl.textContent = '已恢复上次草稿';
+    }
+  }catch(e){}
+
+  titleEl.addEventListener('input', scheduleSave);
+  editor.addEventListener('input', scheduleSave);
+  countWords();
+
+  document.getElementById('saveBtn').addEventListener('click', function(){ saveDraft(false); });
+
+  document.getElementById('exportBtn').addEventListener('click', function(){
+    saveDraft(true);
+    var name = (titleEl.value.trim() || '未命名').replace(/[\\/:*?"<>|]/g, '');
+    var md = (titleEl.value.trim() ? '# ' + titleEl.value.trim() + '\n\n' : '') + editor.value;
+    var blob = new Blob([md], {type: 'text/markdown;charset=utf-8'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = name + '.md';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+  });
+
+  document.getElementById('newBtn').addEventListener('click', function(){
+    if(editor.value.trim() || titleEl.value.trim()){
+      if(!confirm('新建一篇会清空当前内容（已自动保存的草稿也会清除），确定吗？')) return;
+    }
+    titleEl.value = '';
+    editor.value = '';
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    savedEl.textContent = '草稿未保存';
+    countWords();
+    titleEl.focus();
+  });
+
+  // 语音输入
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if(!SR){
+    voiceBtn.disabled = true;
+    voiceBtn.textContent = '🎤 当前浏览器不支持语音输入';
+    voiceStatus.textContent = '请用 Chrome 或 Edge 打开本站使用语音输入';
+  }else{
+    var rec = new SR();
+    rec.continuous = true;
+    rec.interimResults = true;
+    rec.lang = 'zh-CN';
+    var listening = false;
+
+    function insertAtCursor(text){
+      var start = editor.selectionStart, end = editor.selectionEnd;
+      var v = editor.value;
+      editor.value = v.slice(0, start) + text + v.slice(end);
+      var pos = start + text.length;
+      editor.selectionStart = editor.selectionEnd = pos;
+      editor.focus();
+      scheduleSave();
+    }
+
+    rec.onresult = function(e){
+      var interim = '';
+      for(var i = e.resultIndex; i < e.results.length; i++){
+        var r = e.results[i];
+        if(r.isFinal){ insertAtCursor(r[0].transcript); }
+        else { interim += r[0].transcript; }
+      }
+      voiceStatus.textContent = listening ? ('正在听…' + (interim ? '（' + interim + '）' : '')) : '';
+    };
+    rec.onerror = function(e){
+      if(e.error === 'not-allowed' || e.error === 'service-not-allowed'){
+        voiceStatus.textContent = '未获得麦克风权限，请在浏览器地址栏允许麦克风后重试';
+      }else if(e.error === 'network'){
+        voiceStatus.textContent = '语音服务网络异常，稍后重试';
+      }else if(e.error !== 'aborted'){
+        voiceStatus.textContent = '语音识别出错：' + e.error;
+      }
+      stopVoice();
+    };
+    rec.onend = function(){ if(listening){ stopVoice(); } };
+
+    function startVoice(){
+      try{
+        rec.start();
+        listening = true;
+        voiceBtn.textContent = '■ 停止语音输入';
+        voiceBtn.classList.add('recording');
+        voiceStatus.textContent = '正在听…';
+      }catch(e){
+        voiceStatus.textContent = '启动失败，请再点一次';
+      }
+    }
+    function stopVoice(){
+      listening = false;
+      try{ rec.stop(); }catch(e){}
+      voiceBtn.textContent = '🎤 开始语音输入';
+      voiceBtn.classList.remove('recording');
+      if(!voiceStatus.textContent || voiceStatus.textContent.indexOf('正在听') === 0){
+        voiceStatus.textContent = '';
+      }
+    }
+    voiceBtn.addEventListener('click', function(){
+      if(listening){ stopVoice(); } else { startVoice(); }
+    });
+  }
+})();
+</script>
+</body>
+</html>
