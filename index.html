@@ -666,6 +666,25 @@ footer::before{
 .reveal[data-delay="4"]{transition-delay:.42s}
 .reveal[data-delay="5"]{transition-delay:.54s}
 
+/* ---------- 使用说明折叠面板 ---------- */
+.help-btn{
+  display:inline-flex;align-items:center;gap:.55em;margin-top:1.35rem;margin-left:1.4rem;
+  font-size:.85rem;letter-spacing:.18em;font-weight:500;color:var(--cinnabar-dp);
+  background:none;border:none;border-bottom:2px solid var(--gamboge);padding-bottom:.28em;cursor:pointer;
+  transition:gap .4s var(--ease-out), border-color .4s;
+}
+.help-btn:hover{gap:.95em;border-color:var(--cinnabar)}
+#ng-help{
+  display:none;margin-top:1.35rem;padding-top:1.35rem;
+  border-top:1px solid var(--line);
+  font-size:.88rem;font-weight:300;line-height:2.05;color:var(--ink-soft);
+}
+#ng-help b{color:var(--ink);font-weight:500}
+#ng-help h5{font-family:var(--serif);font-size:.95rem;font-weight:700;letter-spacing:.12em;color:var(--cinnabar-dp);margin:1rem 0 .3rem}
+#ng-help h5:first-child{margin-top:0}
+#ng-help ol{padding-left:1.4em}
+#ng-help p{margin:.3rem 0}
+
 /* ---------- 响应式 ---------- */
 @media (max-width:1060px){
   .hero-grid{grid-template-columns:1fr;gap:3.6rem}
@@ -873,6 +892,24 @@ footer::before{
         <a class="inline-link" href="http://100.85.187.117:8098/" target="_blank" rel="noopener">
           打开生成站 <span>↗</span>
         </a>
+        <button class="help-btn" id="ng-help-btn" type="button">使用说明 ▾</button>
+        <div id="ng-help">
+          <h5>打开方式</h5>
+          <p>在家直接开 192.168.1.6:8098；在外先连上 Tailscale，再点上面的“生成站”链接。</p>
+          <h5>分阶段创作（12 段，一步一步来）</h5>
+          <ol>
+            <li>先传语料：在生成站“语料管理”里传同类型小说 .txt，每类至少 3 篇能用的（每篇 500 中文字以上）。</li>
+            <li>选分类、选阶段：从“脑洞”开始，点“生成本阶段提示词”，等几十秒。</li>
+            <li>复制提示词：点“复制提示词”，粘到你常用的 AI（DeepSeek、豆包都行）里生成本阶段内容。</li>
+            <li>粘回保存：把 AI 生成的内容粘回“本阶段 AI 生成结果”，点“保存并进入下一阶段”，会自动带上前一段的内容。</li>
+            <li>走完导出：12 段走完点“导出全部阶段输出”，存成一个 .md 文件。</li>
+          </ol>
+          <p><b>另外：</b>进度存在飞牛里，刷新、换设备后打勾的阶段都在；一次只做一个故事，换故事前先导出保存；分阶段模式不用在站内设置 Key 也能用；提示词是按官方文档重建版，不是原作者原文。</p>
+          <h5>番茄爆款生成器</h5>
+          <p>填一个核心梗，点“开始生成”，全程约需几分钟，会出大纲、标题导语、12000 字以上初稿、审稿和去 AI 味终稿。</p>
+          <h5>写作工作台（8100）</h5>
+          <p>打开工作台后先建作品，再写章节；大纲、人物卡、灵感便签都在同一站里。小黑屋可锁定时长专心写；AI 润色、扩写、改错需先在站内“设置”里填一把 Key。数据存在飞牛容器里，记得定期用站内整库备份导出。</p>
+        </div>
       </div>
     </div>
 
@@ -948,7 +985,7 @@ footer::before{
         <div class="g-idx"><span>Ⅲ</span></div>
         <h3>码字创作</h3>
         <div class="g-line"></div>
-        <div class="g-count">02 / TOOLS</div>
+        <div class="g-count">03 / TOOLS</div>
       </div>
 
       <div class="g3">
@@ -969,6 +1006,15 @@ footer::before{
             <a class="t-link" href="https://mz.chenggua.com/" target="_blank" rel="noopener">官网 ↗</a>
           </div>
         </div>
+
+        <div class="tool-row reveal">
+          <div class="t-idx">08</div>
+          <div class="t-name">写作工作台 <span class="tag hot">已部署</span></div>
+          <div class="t-desc">本站自建的码字台：作品、章节、大纲、人物卡、灵感便签、字数统计、小黑屋、AI 润色扩写改错都在同一站。数据存在家里飞牛上，站内可整库备份导出。在家开 192.168.1.6:8100，在外连 Tailscale 后开下面链接。</div>
+          <div class="t-actions">
+            <a class="t-link" href="http://100.85.187.117:8100/" target="_blank" rel="noopener">打开工作台 ↗</a>
+          </div>
+        </div>
       </div>
 
       <div class="ledger-group-title g4 reveal">
@@ -980,7 +1026,7 @@ footer::before{
 
       <div class="g4">
         <div class="tool-row reveal">
-          <div class="t-idx">08</div>
+          <div class="t-idx">09</div>
           <div class="t-name">讯飞语记 <span class="tag free">免费</span></div>
           <div class="t-desc">说话变文字：单次最长 120 分钟持续语音输入，多端同步。适合开口说、自动成文字的口述写作。</div>
           <div class="t-actions">
@@ -1127,6 +1173,7 @@ footer::before{
       <div class="footer-col">
         <h5>自部署项目</h5>
         <a href="http://100.85.187.117:8098/" target="_blank" rel="noopener">AI 小说生成站</a>
+        <a href="http://100.85.187.117:8100/" target="_blank" rel="noopener">写作工作台</a>
         <a href="https://dengzheng122.github.io/casting-workflow/" target="_blank" rel="noopener">熔铸仿写工作流</a>
         <a href="https://dengzheng122.github.io/fanqie-hit-short-story/" target="_blank" rel="noopener">番茄短篇爆款生成器</a>
       </div>
@@ -1165,6 +1212,17 @@ footer::before{
   if(menuBtn) menuBtn.addEventListener('click', ()=> mobileMenu.classList.add('open'));
   if(menuClose) menuClose.addEventListener('click', closeMenu);
   if(mobileMenu) mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeMenu));
+
+  /* ---------- 使用说明折叠 ---------- */
+  const helpBtn = document.getElementById('ng-help-btn');
+  const helpPanel = document.getElementById('ng-help');
+  if(helpBtn && helpPanel){
+    helpBtn.addEventListener('click', ()=>{
+      const open = helpPanel.style.display === 'none' || helpPanel.style.display === '';
+      helpPanel.style.display = open ? 'block' : 'none';
+      helpBtn.textContent = open ? '收起使用说明 ▴' : '使用说明 ▾';
+    });
+  }
 
   /* ---------- 入场动画 ---------- */
   const reveals = document.querySelectorAll('.reveal');
