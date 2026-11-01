@@ -399,6 +399,7 @@ header.scrolled{
   transition:gap .4s var(--ease-out), border-color .4s;
 }
 .workflow-note .inline-link:hover{gap:.95em;border-color:var(--cinnabar)}
+.tool-feature .desk-card{grid-column:1/-1}
 
 /* 账目行 · 按组染色 */
 .ledger{margin-top:clamp(3rem,6vw,5rem);border-top:2.5px solid var(--ink)}
@@ -928,6 +929,18 @@ footer::before{
           <h5>写作工作台（8100）</h5>
           <p>打开工作台后先建作品，再写章节；大纲、人物卡、灵感便签都在同一站里。小黑屋可锁定时长专心写；AI 润色、扩写、改错需先在站内“设置”里填一把 Key。数据存在飞牛容器里，记得定期用站内整库备份导出。</p>
         </div>
+      </div>
+      <div class="workflow-note desk-card reveal" data-delay="2">
+        <div class="k">Self-Hosted · 已部署</div>
+        <h4>写作工作台<br>在家里飞牛上运行</h4>
+        <p>
+          作品、章节、大纲、人物卡、灵感便签、字数统计、小黑屋、AI 润色扩写改错都在同一站。
+          数据存在飞牛容器里，站内可整库备份导出。在家局域网直接打开，出门在外连上 Tailscale 亦可访问。
+          AI 辅助需先在站内「设置」里填一把 LLM 的 Key——只存在你自己的机器里。
+        </p>
+        <a class="inline-link" href="http://100.85.187.117:8100/" target="_blank" rel="noopener">
+          打开工作台 <span>↗</span>
+        </a>
       </div>
     </div>
 
